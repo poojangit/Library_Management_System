@@ -1,6 +1,6 @@
 package books;
 
-public class Books {
+public class Book {
     String title;
     String author;
     String isbn;
