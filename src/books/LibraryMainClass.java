@@ -26,6 +26,29 @@ public class LibraryMainClass {
         }
         System.out.println("These are the books that are there in our library");
         library.displayBooks();
+
+        System.out.println("Do you want to checkout some books? Type Yes or No");
+        String shouldCheckout = sc.next();
+        shouldCheckout = shouldCheckout.toLowerCase();
+        // System.out.println(shouldCheckout);
+        if(shouldCheckout.equals("yes")){
+            System.out.println("Enter the isbn to checkout the books: ");
+            String checkoutIsbn = sc.next();
+            library.checkoutBook(checkoutIsbn);
+        } else {
+            System.out.println("okay");
+        }
+
+        System.out.println("Do you want to return the checkedout book? Type yes or no");
+        String shouldReturn = sc.next();
+        shouldReturn = shouldReturn.toLowerCase();
+        if(shouldReturn.equals("yes")) {
+            System.out.println("Enter the isbn to return the books: ");
+            String returnIsbn = sc.next();
+            library.returnBook(returnIsbn); 
+        } else {
+            System.out.println("Okay");
+        }
         sc.close();
     }
 }
