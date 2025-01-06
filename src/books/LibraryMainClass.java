@@ -5,9 +5,12 @@ import java.util.Scanner;
 public class LibraryMainClass {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        //& User registration ---->
         System.out.println("Enter your name : ");
         String name = sc.nextLine();
         System.out.println("Hello " + name + " welcome to Library");
+
+        //& Adding books to library --->
         Library library = new Library(3);
         System.out.println("How many books you need to add? : ");
         int numOfBooks = sc.nextInt();
@@ -25,8 +28,11 @@ public class LibraryMainClass {
             library.addBook(book);
         }
         System.out.println("These are the books that are there in our library");
+
+        //& display all the books --->
         library.getAvailableBooks();
 
+        //& checking out the books --->
         System.out.println("Do you want to checkout some books? Type Yes or No");
         String shouldCheckout = sc.next();
         shouldCheckout = shouldCheckout.toLowerCase();
@@ -39,6 +45,7 @@ public class LibraryMainClass {
             System.out.println("okay");
         }
 
+        //& returning the book --->
         System.out.println("Do you want to return the checkedout book? Type yes or no");
         String shouldReturn = sc.next();
         shouldReturn = shouldReturn.toLowerCase();
@@ -50,6 +57,7 @@ public class LibraryMainClass {
             System.out.println("Okay");
         }
 
+        //& Removing a book from the library
         System.out.println("Do you want to remove the books? type yes or no");
         String shouldRemove = sc.next();
         shouldRemove = shouldRemove.toLowerCase();
@@ -63,6 +71,7 @@ public class LibraryMainClass {
         }
         sc.close();
 
+        //& Displaying available books after removing the books.
         System.out.println();
         System.out.println("Currently these books are available");
         library.getAvailableBooks();
