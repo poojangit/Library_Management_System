@@ -21,19 +21,20 @@ public class Library {
         }
     }
 
-    public void displayBooks() {
-        if (bookCount == 0) {
-            System.out.println("No books available!");
-        } else {
-            for (int i = 0; i < bookCount; i++) {
-                books[i].displayDetails();
-                System.out.println("-------------------");
-            }
-            System.out.println();
-        }
-    }
-
+    
     public void removeBook(String isbn) {
+        for(int i=0; i<bookCount; i++){
+            if(books[i].getIsbn().equals(isbn)){
+                for(int j=i; j< bookCount-1; j++){
+                    books[j] = books[j+1];
+                }
+                books[bookCount-1] = null;
+                bookCount--;
+                System.out.println("Book with " + isbn + " removed");
+                return;
+            }
+        }
+        System.out.println("Book with " + isbn + " not found");
     }
 
     public void checkoutBook(String isbn) {
@@ -68,5 +69,16 @@ public class Library {
     }
 
     public void getAvailableBooks() {
+        if (bookCount == 0) {
+            System.out.println("No books available!");
+        } else {
+            for (int i = 0; i < bookCount; i++) {
+                books[i].displayDetails();
+                System.out.println("-------------------");
+            }
+            System.out.println();
+        }
     }
+    
+
 }

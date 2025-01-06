@@ -25,7 +25,7 @@ public class LibraryMainClass {
             library.addBook(book);
         }
         System.out.println("These are the books that are there in our library");
-        library.displayBooks();
+        library.getAvailableBooks();
 
         System.out.println("Do you want to checkout some books? Type Yes or No");
         String shouldCheckout = sc.next();
@@ -49,6 +49,22 @@ public class LibraryMainClass {
         } else {
             System.out.println("Okay");
         }
+
+        System.out.println("Do you want to remove the books? type yes or no");
+        String shouldRemove = sc.next();
+        shouldRemove = shouldRemove.toLowerCase();
+        if(shouldRemove.equals(shouldRemove)){
+            System.out.println("Enter the isbn to remove a perticular book");
+            String removeIsbn = sc.next();
+            library.removeBook(removeIsbn);
+        }
+        else {
+            System.out.println("okay");
+        }
         sc.close();
+
+        System.out.println();
+        System.out.println("Currently these books are available");
+        library.getAvailableBooks();
     }
 }
