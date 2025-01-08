@@ -61,7 +61,7 @@ public class LibraryMainClass {
         System.out.println("Do you want to remove the books? type yes or no");
         String shouldRemove = sc.next();
         shouldRemove = shouldRemove.toLowerCase();
-        if(shouldRemove.equals(shouldRemove)){
+        if(shouldRemove.equals("yes")){
             System.out.println("Enter the isbn to remove a perticular book");
             String removeIsbn = sc.next();
             library.removeBook(removeIsbn);
