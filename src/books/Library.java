@@ -1,7 +1,7 @@
 package books;
 
 public class Library {
-    public static final String isbn = null;
+    // String isbn;
     Book[] books;
     int bookCount;
 
